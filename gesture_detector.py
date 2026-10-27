@@ -70,6 +70,7 @@ class GestureResult:
     raw_action: str = ACTION_NONE
     raw_finger_count: Optional[int] = None
     backend: str = "unavailable"
+    landmarks: any = None
 
 
 class GestureDetector:
@@ -238,6 +239,7 @@ class GestureDetector:
             raw_action=raw_action,
             raw_finger_count=finger_count,
             backend=self.backend,
+            landmarks=hand_landmarks,
         )
 
     def get_latest_rgb_frame(self):
